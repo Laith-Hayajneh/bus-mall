@@ -59,10 +59,35 @@ span {
 }
 
 ul li {
-  color: white;
+  color: #B0C4DE		;
   margin: 10px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-family: 'Mountains of Christmas', cursive;
 }
-span{
+  span{
   font-size: 32px;
+}
+#attempts{
+  color: #51C0BF;
+  background-color:black;
+  padding: 12px;
+  border-radius: 50%;
+}
+div {
+  border-radius: 20%;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: 2;
+  animation-direction: alternate-reverse;  
+}
+
+@keyframes example {
+  0%   {background-color:#CA9F92; left:0px; top:0px;}
+  25%  {background-color:#51C0BF; left:200px; top:0px;}
+  50%  {background-color:#7095E1; left:200px; top:200px;}
+  75%  {background-color:rgb(71, 94, 71); left:0px; top:200px;}
+  100% {background-color:#CA9F92; left:0px; top:0px;}
 }
