@@ -14,12 +14,50 @@ function ProductImage(productName) {
     this.views = 0;
     product.push(this);
     productImageName.push(this.productName);
+
 }
 
 let productImage = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg',];
 for (let i = 0; i < productImage.length; i++) {
     new ProductImage(productImage[i])
 };
+
+function settingItems() {
+    let data = JSON.stringify(product);
+    let dataV = JSON.stringify(attempts);
+    localStorage.setItem('clicks', data)
+    localStorage.setItem('allAttempt', dataV)
+}
+
+function gettingItems() {
+    let stringObj = localStorage.getItem('clicks');
+    let normalObj = JSON.parse(stringObj);
+    let stringObj2 = localStorage.getItem('allAttempt');
+    let normalObj2 = JSON.parse(stringObj2);
+    console.log(normalObj)
+    console.log(normalObj2);
+    if (normalObj !== null) {
+        product = normalObj;
+
+    }
+
+//     if (normalObj2 !== null) {
+//         attempts = normalObj2;
+// console.log('jhj', normalObj2)
+//     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 function generateImage() {
     //0-1 >> 0-7
@@ -55,13 +93,13 @@ function renderImg() {
         middleImageIndex = generateImage();
         rightImageIndex = generateImage();
     };
-   
+
 
     lastImage[0] = leftImageIndex;
     lastImage[1] = middleImageIndex;
     lastImage[2] = rightImageIndex;
 
-    console.log(lastImage);
+    // console.log(lastImage);
 
     lImgEl.setAttribute('src', product[leftImageIndex].source);
     lImgEl.setAttribute('title', product[leftImageIndex].source);
@@ -119,6 +157,7 @@ function handelClicks(event) {
         chartRender();
 
     }
+    settingItems();
 
 }
 
@@ -175,3 +214,4 @@ function chartRender() {
 
 
 
+gettingItems();
