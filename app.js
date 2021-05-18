@@ -16,7 +16,6 @@ function ProductImage(productName) {
     productImageName.push(this.productName);
 
 }
-
 let productImage = ['bag.jpg', 'banana.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg', 'bubblegum.jpg', 'chair.jpg', 'cthulhu.jpg', 'dog-duck.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg', 'scissors.jpg', 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'water-can.jpg', 'wine-glass.jpg',];
 for (let i = 0; i < productImage.length; i++) {
     new ProductImage(productImage[i])
@@ -46,19 +45,6 @@ function gettingItems() {
 // console.log('jhj', normalObj2)
 //     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 function generateImage() {
     //0-1 >> 0-7
     return Math.floor(Math.random() * product.length);
